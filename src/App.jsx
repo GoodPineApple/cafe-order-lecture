@@ -1,5 +1,5 @@
 import Header from "./components/Header.jsx";
-import MenuCard from "./components/TODO 5";
+import MenuCard from "./components/TODO 5.js";
 import Footer from "./components/Footer.jsx";
 
 // 메뉴판 — 카드 컴포넌트 하나를 props만 바꿔 네 번 씁니다
