@@ -11,8 +11,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    document.title =
-      cart.length > 0 ? `(${cart.length}) 오즈 카페` : "오즈 카페";
+    document.title = cart.length > 0 ? `(${cart.length}) 오즈 카페` : "오즈 카페";
   }, [cart.length]);
 
   function handleAdd(menu) {
@@ -29,11 +28,8 @@ function App() {
       <Route element={<Layout count={cart.length} />}>
         <Route index element={<MenuPage onAdd={handleAdd} />} />
         <Route path="menu/:id" element={<MenuDetailPage onAdd={handleAdd} />} />
-        <Route
-          path="cart"
-          element={<CartPage cart={cart} onRemove={handleRemove} />}
-        />
-        <Route path="TODO 4" element={<NotFoundPage />} />
+        <Route path="cart" element={<CartPage cart={cart} onRemove={handleRemove} />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
