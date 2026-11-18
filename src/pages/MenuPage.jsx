@@ -3,7 +3,8 @@ import MenuCard from "../components/MenuCard.jsx";
 import { menus, categories } from "../data/menus.js";
 
 // 분류 단추 — 고른 것과 아닌 것의 클래스를 통째로 적어 둡니다
-const chipOn = "rounded-full bg-amber-700 px-4 py-1.5 text-sm font-bold text-white";
+const chipOn =
+  "rounded-full bg-amber-700 px-4 py-1.5 text-sm font-bold text-white";
 const chipOff =
   "rounded-full bg-white px-4 py-1.5 text-sm text-stone-600 ring-1 ring-stone-300 hover:bg-stone-100";
 // 찾기 칸 — focus:는 칸을 골랐을 때
@@ -18,7 +19,8 @@ function MenuPage({ onAdd }) {
 
   const visibleMenus = menus.filter(
     (menu) =>
-      (category === "전체" || menu.category === category) && menu.name.includes(keyword),
+      (category === "전체" || menu.category === category) &&
+      menu.name.includes(keyword),
   );
 
   return (
@@ -46,7 +48,7 @@ function MenuPage({ onAdd }) {
         <p className="text-stone-500">찾는 메뉴가 없어요</p>
       ) : (
         // 좁은 화면 한 칸 → 640px 이상 두 칸 → 1024px 이상 세 칸
-        <div className="grid grid-cols-1 gap-4 TODO 4:grid-cols-2 TODO 5:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {visibleMenus.map((menu) => (
             <MenuCard
               key={menu.id}
