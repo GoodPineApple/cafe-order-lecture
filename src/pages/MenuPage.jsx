@@ -3,8 +3,7 @@ import MenuCard from "../components/MenuCard.jsx";
 import { menus, categories } from "../data/menus.js";
 
 // 분류 단추 — 고른 것과 아닌 것의 클래스를 통째로 적어 둡니다
-const chipOn =
-  "rounded-full bg-amber-700 px-4 py-1.5 text-sm font-bold text-white";
+const chipOn = "rounded-full bg-amber-700 px-4 py-1.5 text-sm font-bold text-white";
 const chipOff =
   "rounded-full bg-white px-4 py-1.5 text-sm text-stone-600 ring-1 ring-stone-300 hover:bg-stone-100";
 // 찾기 칸 — focus:는 칸을 골랐을 때
@@ -19,8 +18,7 @@ function MenuPage({ onAdd }) {
 
   const visibleMenus = menus.filter(
     (menu) =>
-      (category === "전체" || menu.category === category) &&
-      menu.name.includes(keyword),
+      (category === "전체" || menu.category === category) && menu.name.includes(keyword),
   );
 
   return (
