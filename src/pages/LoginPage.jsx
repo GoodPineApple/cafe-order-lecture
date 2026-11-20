@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { Navigate } from "react-router";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase.js";
 import Button from "../components/Button.jsx";
 
@@ -24,15 +21,11 @@ function LoginPage({ user }) {
 
   function handleLogin(e) {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password).catch((error) =>
-      setMessage(error.code),
-    );
+    signInWithEmailAndPassword(auth, email, password).catch((error) => setMessage(error.code));
   }
 
   function handleSignUp() {
-    createUserWithEmailAndPassword(auth, email, password).catch((error) =>
-      setMessage(error.code),
-    );
+    createUserWithEmailAndPassword(auth, email, password).catch((error) => setMessage(error.code));
   }
 
   return (
