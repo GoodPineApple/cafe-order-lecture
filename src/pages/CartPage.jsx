@@ -10,7 +10,7 @@ function CartPage({ user }) {
   const cart = useCartStore((state) => state.cart);
   const total = useCartStore(selectCartTotal);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
-  const clearCart = useCartStore((state) => state.TODO 6);
+  const clearCart = useCartStore((state) => state.clearCart);
   const [message, setMessage] = useState("");
 
   function handleOrder() {
@@ -41,7 +41,10 @@ function CartPage({ user }) {
       <h2 className="mb-4 text-xl font-bold">장바구니</h2>
       <ul className="divide-y divide-stone-200 rounded-2xl bg-white ring-1 ring-stone-200">
         {cart.map((menu, index) => (
-          <li key={index} className="flex items-center justify-between gap-3 px-5 py-3">
+          <li
+            key={index}
+            className="flex items-center justify-between gap-3 px-5 py-3"
+          >
             <span>
               {menu.name} {menu.price}원
             </span>
@@ -58,7 +61,10 @@ function CartPage({ user }) {
         ) : (
           <p className="text-stone-600">
             주문하려면{" "}
-            <Link to="/login" className="font-bold text-amber-700 hover:underline">
+            <Link
+              to="/login"
+              className="font-bold text-amber-700 hover:underline"
+            >
               로그인
             </Link>
             하세요
