@@ -8,10 +8,15 @@ function MenuCard({ menu, onAdd }) {
     <article className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-stone-200 hover:shadow-md">
       <h3 className="text-lg font-bold">{menu.name}</h3>
       <p className="mt-1 font-bold text-amber-800">{menu.price}원</p>
-      <p className="mt-2 text-sm text-stone-500">{menu.desc || "오늘의 메뉴"}</p>
+      <p className="mt-2 text-sm text-stone-500">
+        {menu.desc || "오늘의 메뉴"}
+      </p>
       <div className="mt-4 flex items-center gap-3">
         <Button onClick={() => onAdd(menu)}>담기</Button>
-        <Link to={`/menu/${menu.id}`} className="text-sm text-stone-600 hover:underline">
+        <Link
+          to={`/menu/${menu.id}`}
+          className="text-sm text-stone-600 hover:underline"
+        >
           자세히
         </Link>
       </div>
@@ -20,4 +25,4 @@ function MenuCard({ menu, onAdd }) {
 }
 
 // props가 그대로면 다시 그리지 않음
-export default TODO 5(MenuCard);
+export default memo(MenuCard);
